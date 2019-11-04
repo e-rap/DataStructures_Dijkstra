@@ -1,9 +1,7 @@
 #include "MazeSolver.h"
-#include<iostream>
 
 
-
-
+/// test function
 int test(Maze &x, Path& correct_path)
 {
   int ret_val = 0;
@@ -27,7 +25,7 @@ int test(Maze &x, Path& correct_path)
 }
 
 
-
+/// test cases
 int main()
 {
   int ret = 0;
@@ -41,8 +39,6 @@ int main()
   Path p1{ {0,0},{1,0},{2,1},{2,2} };
   ret += test(m1, p1);
 
-  std::cout << "Test 2: \n";
-
   // Given a maze with (0,0) at the left top corner
   //  1  2    4
   //  2 -999  0
@@ -53,6 +49,5 @@ int main()
   Path p2{ {0,0},{0,1},{1,2},{2,2} };
   ret += test(m2, p2);
 
-
-  return ret;
+  return (ret < 0)? -1 : ret;
 }
